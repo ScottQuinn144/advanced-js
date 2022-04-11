@@ -222,7 +222,7 @@ const people1 = [
   
   
   // Complex Filtering
-  const students1 = [
+  const kids = [
     {
       id: 1,
       name: 'Mark',
@@ -254,3 +254,13 @@ const people1 = [
       ]
     },
   ];
+
+  const hasFiveYrsEx = skill => skill.yrsExperience >= 5;
+  const hasStrongSkills = kid => kid.skills.filter(hasFiveYrsEx).length > 0;
+  const candidates = kids.filter(hasStrongSkills);
+  
+  console.log('complex filter with multiple parameters(): ',candidates);
+  
+  const namecandidate = candidates.map(kid => [kid.name]);
+  console.log('return just names from filter() result using map(): ',namecandidate);
+
