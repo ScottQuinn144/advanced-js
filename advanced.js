@@ -287,7 +287,9 @@ const people1 = [
 
 
 
-//-------------------------------------------------- reduce()
+//------------------------------------------------------- reduce()
+
+
 
 // Summing an array of numbers
 console.log('Shows how acc and curr work in reduce(): ')
@@ -299,15 +301,15 @@ let totalNum = num1.reduce((acc, curr) => {
     'Total Value:', acc + curr
 );
 return acc + curr;
-  });
-
+// , 0 is the specified starting number of the accumulator and not index 0
+  }, 0);
 
 // acc = accumulator and keep track of sum
 // curr = currentValue
 console.log('Accumulates all numbers in array with reduce(): ',totalNum);
 
 
-
+// More reduce()
 
 const teamMembers = [
   {
@@ -333,8 +335,18 @@ const teamMembers = [
 ];
 
 // Totaling a specific object property
-
+const totalEx = teamMembers.reduce((acc, curr) => acc + curr.yrsExperience, 0);
+console.log('reduce() on a specific object: ',totalEx);
 
 // Grouping by a property, and totaling it too
+const exByProf = teamMembers.reduce((acc, curr) => {
+  let key = curr.profession;
+  if(!acc[key]){
+      acc[key] = curr.yrsExperience;
+  } else {
+    acc[key] += curr.yrsExperience;
+  }
+  return acc;
+}, {});
 
-
+console.log('Using reduce to munipulate data: ',exByProf);
