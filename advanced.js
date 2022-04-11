@@ -1,5 +1,6 @@
 //---------------------------------------- Arrow Functions
 
+
 // Vanilla JavaScript Function
 function addTwoNums(a, b){
     return a + b;
@@ -34,7 +35,11 @@ const returnMultiLine = () => (
 )
 console.log(returnMultiLine());
 
+
+
 //-------------------------------------------- Spread Operator
+
+
 
 // No Spread Operator
 let array1 = [1, 2, 3];
@@ -62,7 +67,11 @@ console.log('Third object updates b but doesnt change object1: ', object3);
 let array5 = [...array1, {...object1}, ...array2, 'new', 'elements'];
 console.log('Adding specific content: ', array5);
 
+
+
 //---------------------------------------------- Rest Operator
+
+
 
 // Regular function call
 const sumAll = (a, b, c) => a + b + c;
@@ -85,7 +94,11 @@ const sumRest = (a, b, c, ...rest) => {
 let sum6 = sumRest(1, 2, 3, 4, 5, 6);
 console.log('Now with ...rest operator, all the numbers will be added: ',sum6);
 
+
+
 //------------------------------------------------- Destructuring
+
+
 
 // Destructuring Arrays
 let ages = [30, 26, 27];
@@ -143,7 +156,11 @@ console.log(scotty);
 console.log(brian);
 console.log('Destructured object with ...rest: ',rest);
 
-//---------------------------- map() executes on all elements
+
+
+//------------------------------------ map() executes on all elements
+
+
 let number = [1, 2, 3, 4, 5];
 
 // Using a for loop
@@ -193,9 +210,13 @@ const students = [
   ];
   
   const studentsWithId = students.map(student => [student.name, student.id]);
-  console.log('Using map() to identify data in objects: ',studentsWithId);
+  console.log('Using map() to identify data in objects: ',studentsWithId)
+  
 
-//---------------------------- filter() True or False 
+
+//----------------------------------------- filter() True or False 
+
+
 
 // Simple Filtering
 const people1 = [
@@ -263,4 +284,57 @@ const people1 = [
   
   const namecandidate = candidates.map(kid => [kid.name]);
   console.log('return just names from filter() result using map(): ',namecandidate);
+
+
+
+//-------------------------------------------------- reduce()
+
+// Summing an array of numbers
+console.log('Shows how acc and curr work in reduce(): ')
+const num1 = [0, 1, 2 ,3, 4];
+let totalNum = num1.reduce((acc, curr) => {
+  console.log(
+    'Accumulator:', acc,
+    'Current Value:', curr,
+    'Total Value:', acc + curr
+);
+return acc + curr;
+  });
+
+
+// acc = accumulator and keep track of sum
+// curr = currentValue
+console.log('Accumulates all numbers in array with reduce(): ',totalNum);
+
+
+
+
+const teamMembers = [
+  {
+    name: 'Andrew',
+    profession: 'Developer',
+    yrsExperience: 5
+  },
+  {
+    name: 'Ariel',
+    profession: 'Developer',
+    yrsExperience: 7
+  },
+  {
+    name: 'Michael',
+    profession: 'Designer',
+    yrsExperience: 1
+  },
+  {
+    name: 'Kelly',
+    profession: 'Designer',
+    yrsExperience: 3
+  }
+];
+
+// Totaling a specific object property
+
+
+// Grouping by a property, and totaling it too
+
 
