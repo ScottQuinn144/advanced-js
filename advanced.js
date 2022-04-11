@@ -142,3 +142,56 @@ let {scotty, brian,...rest} = people;
 console.log(scotty);
 console.log(brian);
 console.log('Destructured object with ...rest: ',rest);
+
+//---------------------------- map() executes on all elements
+let number = [1, 2, 3, 4, 5];
+
+// Using a for loop
+
+let results = [];
+for (let num of number){
+    results.push(num * 2);
+}
+console.log('Standard loop to multiple numbers: ',results);
+
+// Using map() method
+const multiply = function(number){
+    return number * 2;
+}
+const mapResults = number.map(multiply);
+console.log('Result using map(): ',mapResults);
+
+// Simplified map()
+const simplified = number.map(function(number){return number * 2})
+console.log('Less verbose code for map() with function: ',simplified);
+
+// Simplfied with arrow function
+const simple = number.map(number => number * 2);
+console.log('Simple map() arrow function: ',simple);
+
+// More advanced with Objects
+
+const students = [
+    {
+      id: 1,
+      name: 'Mark',
+      profession: 'Developer',
+      skill: 'JavaScript'
+    },
+    {
+      id: 2,
+      name: 'Ariel',
+      profession: 'Developer',
+      skill: 'HTML'
+    },
+    {
+      id: 3,
+      name: 'Jason',
+      profession: 'Designer',
+      skill: 'CSS'
+    },
+  ];
+  
+  const studentsWithId = students.map(student => [student.name, student.id]);
+  console.log('Using map() to identify data in objects: ',studentsWithId);
+
