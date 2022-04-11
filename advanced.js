@@ -195,3 +195,62 @@ const students = [
   const studentsWithId = students.map(student => [student.name, student.id]);
   console.log('Using map() to identify data in objects: ',studentsWithId);
 
+//---------------------------- filter() True or False 
+
+// Simple Filtering
+const people1 = [
+    {
+      name: 'Michael',
+      age: 23,
+    },
+    {
+      name: 'Lianna',
+      age: 16,
+    },
+    {
+      name: 'Paul',
+      age: 18,
+    },
+  ];
+
+  const legalAge = people1.filter(person => person.age >= 21);
+  console.log('filter() method to find True values of conditional: ',legalAge);
+
+  const paul = people1.filter(p => p.name === 'Paul')[0];
+  console.log('return just the object, not an array with filter(): ',paul);
+
+  
+  
+  // Complex Filtering
+  const students1 = [
+    {
+      id: 1,
+      name: 'Mark',
+      profession: 'Developer',
+      skills: [
+        { name: 'javascript', yrsExperience: 1 },
+        { name: 'html', yrsExperience: 5 },
+        { name: 'css', yrsExperience: 3 },
+      ]
+    },
+    {
+      id: 2,
+      name: 'Ariel',
+      profession: 'Developer',
+      skills: [
+        { name: 'javascript', yrsExperience: 0 },
+        { name: 'html', yrsExperience: 4 },
+        { name: 'css', yrsExperience: 2 },
+      ]
+    },
+    {
+      id: 3,
+      name: 'Jason',
+      profession: 'Designer',
+      skills: [
+        { name: 'javascript', yrsExperience: 1 },
+        { name: 'html', yrsExperience: 1 },
+        { name: 'css', yrsExperience: 5 },
+      ]
+    },
+  ];
